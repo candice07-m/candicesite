@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de présentation - Cando07</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d7dfdf; /* Teal */
+            color: white;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .session {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .left, .right {
+            flex: 0 0 200px;
+            text-align: center;
+        }
+
+        .center {
+            flex: 1;
+            text-align: center;
+            color: maroon;
+            padding: 0 20px;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .presentation {
+            border: 3px dashed blue;
+            color: navy;
+            background-color: white;
+            width: auto;
+            margin: 40px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h1, h2, h3 {
+            color: green;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: navy;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #008080;
+            color: white;
+        }
+
+        .photo-profil {
+            display: block;
+            margin: 20px auto;
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            border: 3px solid #008080;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        blockquote {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f8f8;
+            border-left: 5px solid #008080;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .session {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .left, .right, .center {
+                flex: 1;
+                width: 100%;
+            }
+            
+            .logo {
+                width: 150px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        .Retour{
+            background-color:rgb(21, 205, 110);color:black;
+            display: flex; 
+            justify-content: center;
+        }
+        .Buttons{
+            background-color:rgb(21, 205, 110);color:black;
+        }
+        .home-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #a777e3, #6e8efb);
+        }
+
+        .home-button:active {
+            transform: translateY(1px);
+        }
+
+        .home-button::before {
+            content: "←";
+            margin-right: 8px;
+            font-size: 18px;
+        }
+
+/* Animation optionnelle au survol */
+        .home-button:hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-100%);
+            animation: shine 1.5s infinite;
+        }
+
+        @keyframes shine {
+            100% {
+        transform: translateX(100%);
+        }
+}
+
+</style>
+</head>
+<body>
+    <section class="session"> 
+        <div class="left">
+            <a href="https://www.eneam.uac.bj">
+                <img src="logo_eneam.png" alt="Logo ENEAM" class="logo">
+            </a>
+        </div>
+        <div class="center"> 
+            <h1>Bienvenue sur le site de Candice</h1> 
+        </div> 
+        <div class="right">
+            <a href="https://www.etudiant.uac.bj">
+                <img src="logo_uac.png" alt="Logo UAC" class="logo">
+            </a>
+        </div> 
+    </section>
+
+    <div class="presentation">
+        <h2><center>BIENVENUE!</center></h2>
+        
+        <nav>
+            <ul>
+                <li><a href="#Acceuil">Accueil</a></li> 
+                <li><a href="#Etat Civil">Etat Civil</a></li>
+                <li><a href="#Description">Description</a></li>
+            </ul>
+        </nav>
+        
+        <section id="Acceuil">
+            <h3><center>I- ACCUEIL</center></h3>
+            <h5><center>Welcome friends!!</center></h5>
+        </section>
+        
+        <section id="Etat Civil">
+            <h3><center>II- ETAT CIVIL</center></h3>
+            <p>Présentation</p>
+            
+            <blockquote>
+                <strong><em>NOM:</em></strong> BIOKOU<br>
+                <strong><em>PRÉNOMS:</em></strong> Mawujro Candice Sènami<br>
+                <strong><em>DATE DE NAISSANCE:</em></strong> 07 Novembre 2006<br>
+                <strong><em>GENRE:</em></strong> Féminin<br>
+                <strong><em>DIPLOME:</em></strong> BAC<br>
+                <strong><em>NUMÉRO:</em></strong> 44564876<br>
+                <strong><em>PROFESSION:</em></strong> Informaticienne<br>
+            </blockquote>
+        </section>
+        
+        <section id="Description">
+            <h3><center>III- DESCRIPTION</center></h3>
+            <blockquote>
+                Je me nomme BIOKOU Candice et j'ai 18 ans.<br>
+                Je suis en première année d'université à l'ENEAM dans la filière de l'informatique de gestion.<br>
+                Je suis beaucoup introvertie ce qui fait que mon passe-temps préféré est le sommeil... et avoir la tête dans les nuages.<br>
+                J'aimerais devenir la développeuse d'application la plus connue et la plus compétente en commençant par la création d'un site donnant accès à plusieurs sites.<br>
+                J'ai beaucoup de hobbies que je ne peux pas tous citer.<br>
+                J'aimerais tout faire pour rendre fière mon papa et pouvoir honorer la mémoire de maman.
+            </blockquote>
+        </section>
+        <img style="height: 760px; width: auto; opacity: 0.9; border-radius: 3px;place-items: center;" src="candice.jpg" alt="Candice">
+       
+            
+    <div class="">
+        <a href="index.html"><input type="button" value="Retour à l'Acceuil"class="home-button"></a>
+    </div>
+    </div>
+    
+</body>
+</html>
+
+

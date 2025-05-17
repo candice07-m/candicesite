@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - BIOKOU Candice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            background-image: url('images/background-cv.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header {
+            background-color: #95a5a6;
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        
+        .photo-container {
+            margin: 20px auto;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .section {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: #3498db;
+            margin: 10px auto 0;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #2c3e50;
+            display: inline-block;
+            width: 120px;
+        }
+        
+        .diplomes-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .diplomes-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .diplomes-list li:before {
+            content: "•";
+            color: #3498db;
+            font-size: 1.5em;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        @media (max-width: 600px) {
+            .header {
+                padding: 20px;
+            }
+            
+            .section {
+                padding: 15px;
+            }
+            
+            .info-label {
+                display: block;
+                width: auto;
+                margin-bottom: 5px;
+            }
+        }
+        .home-button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            display: block;
+            margin: 25px auto 0;
+            transition: background-color 0.3s;cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            bottom: 11px;
+        }
+
+        .home-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #a777e3, #6e8efb);
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <header class="header">
+            <h1>Curriculum Vitae</h1>
+        </header>
+        
+        <div class="photo-container">
+            <img src="candice.jpg" alt="#" class="photo">
+        </div>
+        
+        <section class="section">
+            <h2 class="section-title">PRÉSENTATION</h2>
+            
+            <div class="info-item">
+                <span class="info-label">NOM :</span> BIOKOU
+            </div>
+            
+            <div class="info-item">
+                <span class="info-label">PRÉNOM :</span> Mawujro Candice S.
+            </div>
+            
+            <div class="info-item">
+                <span class="info-label">ÂGE :</span> 18 ans
+            </div>
+            
+            <div class="info-item">
+                <span class="info-label">PROFESSION :</span> Étudiante
+            </div>
+            
+            <div class="info-item">
+                <span class="info-label">CONTACT :</span> 01 44 56 48 76
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">DIPLÔMES</h2>
+            
+            <ul class="diplomes-list">
+                <li>Titulaire d'un CEP avec mention bien en 2017</li>
+                <li>Titulaire d'un BEPC avec mention bien en 2021</li>
+                <li>Titulaire d'un BAC avec mention assez bien en 2024</li>
+                <li>Actuellement étudiante en informatique de gestion à l'ENEAM</li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">COMPÉTENCES</h2>
+            <p><ul>
+                <li>  Maîtrise partielle des langages de balisages tels que html et css...</li>
+                <li> Maîtrise des notions de bases en python</li>
+            </ul></p>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">OBJECTIFS</h2>
+            <p>Je compte devenir une grande Webmaster dans quelque temps et tout faire pour honorer la mémoire de ma mère peu importe les difficultés !</p>
+        </section>
+        <div>
+            <a href="index.html"><input type="button" value="Retour à l'Acceuil" class="home-button"></a>
+        </div>
+    </div>
+</body>
+</html>

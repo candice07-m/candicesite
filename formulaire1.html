@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'enregistrement des étudiants</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            margin: 25px 0 15px;
+        }
+        
+        form {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-section {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        label {
+            display: inline-block;
+            margin: 8px 0;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-row > div {
+            flex: 1;
+        }
+        
+        .checkbox-group, .radio-group {
+            margin: 15px 0;
+        }
+        
+        .checkbox-item, .radio-item {
+            margin: 8px 0;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .buttons input, .buttons a {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .envoyer {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .envoyer:hover {
+            background-color: #c0392b;
+        }
+        
+        .effacer {
+            background-color: #1abc9c;
+            color: white;
+        }
+        
+        .effacer:hover {
+            background-color: #16a085;
+        }
+        
+        .quitter {
+            background-color: #f1c40f;
+            color: #2c3e50;
+        }
+        
+        .quitter:hover {
+            background-color: #f39c12;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulaire d'enregistrement des étudiants</h1>
+    
+    <form method="post" action="#">
+        <fieldset class="form-section">
+            <legend><h2>État Civil</h2></legend>
+            
+            <div class="form-row">
+                <div>
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div>
+                    <label for="prenom">Prénoms</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div>
+                    <label for="sexe">Sexe</label>
+                    <input type="text" id="sexe" name="sexe">
+                </div>
+                <div>
+                    <label for="email">Adresse E-mail</label>
+                    <input type="email" id="email" name="email">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div>
+                    <label for="contact">Contact</label>
+                    <input type="tel" id="contact" name="contact">
+                </div>
+                <div>
+                    <label for="naissance">Date de naissance</label>
+                    <input type="date" id="naissance" name="naissance">
+                </div>
+            </div>
+        </fieldset>
+        
+        <fieldset class="form-section">
+            <legend><h2>Diplômes</h2></legend>
+            <p>Cochez le diplôme que vous avez obtenu :</p>
+            
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="CEP" name="diplome[]" value="CEP">
+                    <label for="CEP">CEP</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="BEPC" name="diplome[]" value="BEPC">
+                    <label for="BEPC">BEPC</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="BAC" name="diplome[]" value="BAC">
+                    <label for="BAC">BAC</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="BTS" name="diplome[]" value="BTS">
+                    <label for="BTS">BTS</label>
+                </div>
+            </div>
+            
+            <label for="adresse">Votre adresse</label>
+            <input type="text" id="adresse" name="adresse">
+        </fieldset>
+        
+        <fieldset class="form-section">
+            <legend><h2>Pays</h2></legend>
+            <p>Choisissez un pays :</p>
+            
+            <div class="radio-group">
+                <div class="radio-item">
+                    <input type="radio" id="Senegal" name="pays" value="Sénégal">
+                    <label for="Senegal">Sénégal</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="Benin" name="pays" value="Bénin">
+                    <label for="Benin">Bénin</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="France" name="pays" value="France">
+                    <label for="France">France</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" id="Maroc" name="pays" value="Maroc">
+                    <label for="Maroc">Maroc</label>
+                </div>
+            </div>
+        </fieldset>
+        
+        <div class="buttons">
+            <input type="submit" value="Envoyer" class="envoyer">
+            <input type="reset" value="Effacer" class="effacer">
+            <a href="index.html" class="quitter">Quitter</a>
+        </div>
+    </form>
+</body>
+</html>
