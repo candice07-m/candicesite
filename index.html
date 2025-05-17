@@ -3,234 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Le site web de Candice</title>
+    <title>Site de Candice</title>
     <style>
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
-        
-        body {
-            display: flex;
-            background-color: black;
-            color: white;
-            position: relative;
-            min-height: 100vh;
-        }
-        
-        /* Style du bouton hamburger */
-        .hamburger {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 3;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid white;
-        }
-        
-        .hamburger span {
-            display: block;
-            width: 30px;
-            height: 3px;
-            background: white;
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-        
-        /* Menu initialement caché */
-        .menu {
-            width: 250px;
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-            position: fixed;
+        .container {
+            display: grid;
+            grid-template-rows: 80px 1fr 50px;
+            grid-template-columns: 200px 1fr;
+            grid-template-areas: 
+                "header header"
+                "menu content"
+                "footer footer";
             height: 100vh;
-            top: 0;
-            left: -250px;
-            z-index: 2;
-            transition: all 0.3s ease;
-            border-right: 4px solid green;
         }
-        
-        /* Quand le menu est actif */
-        .menu.active {
-            left: 0;
+        .header {
+            grid-area: header;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            font-size: 20px;
         }
-        
-        /* Animation du hamburger quand le menu est ouvert */
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+        .menu {
+            grid-area: menu;
+            background: #ddd;
+            padding: 10px;
         }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
-        }
-        
-        .menu h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: white;
-            padding-bottom: 10px;
-            border-bottom: 1px solid green;
-        }
-        
         .menu a {
             display: block;
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            background-color: green;
-            color: white;
-            text-align: center;
             text-decoration: none;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: all 0.3s;
+            color: black;
+            padding: 8px;
+            border-bottom: 1px solid #aaa;
+            cursor: pointer;
         }
-        
         .menu a:hover {
-            background-color: darkgreen;
-            transform: translateX(5px);
+            background: #bbb;
         }
-        
-        .slideshow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: url("images/background.jpg") no-repeat center center fixed;
-            background-size: cover;
-            opacity: 0.8;
-        }
-        
-        .container {
-            flex-grow: 1;
-            width: 100%;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
+        .content {
+            grid-area: content;
             padding: 20px;
-            transition: margin-left 0.3s;
         }
-        
-        /* Quand le menu est ouvert, on décale le contenu */
-        .container.menu-open {
-            margin-left: 250px;
+        .footer {
+            grid-area: footer;
+            background: #f1f1f1;
+            text-align: center;
+            padding: 10px;
         }
-        
-        .welcome {
-            font-size: 24px;
+        .frame-title {
             font-weight: bold;
-            padding: 15px 30px;
-            border: 4px solid white;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: inline-block;
-            margin-bottom: 20px;
-            border-radius: 8px;
+            color: blue;
         }
-        
-        .description {
-            text-align: left;
-            width: 80%;
-            max-width: 800px;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 20px;
-            line-height: 1.6;
-        }
-        
-        .description h2 {
-            margin-bottom: 15px;
-            color: #4CAF50;
-        }
-        
-        .description p {
-            margin-bottom: 15px;
-        }
-        
-        @media (max-width: 768px) {
-            .container.menu-open {
-                margin-left: 0;
-            }
-            
-            .description {
-                width: 95%;
-            }
+        .center {
+            flex: 1;
+            text-align: center;
+            color: maroon;
+            padding: 0 20px;
         }
     </style>
 </head>
 <body>
-    <div class="slideshow" aria-hidden="true"></div>
-    
-    <!-- Bouton hamburger -->
-    <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="container">
+        <div class="header">
+            <a href="https://www.eneam.uac.bj">
+                <img src="logo_eneam.png" alt="Logo ENEAM" class="logo">
+            </a> 
+            <h1 class: center>Bienvenue sur le site de Candice</h1>
+            <a href="https://www.etudiant.uac.bj">
+                <img src="logo_uac.png" alt="Logo UAC" class="logo">
+            </a>
+        </div>
+        <div class="menu">
+            <span class="frame-title">Frame_2</span>
+            <a onclick="loadContent('Menu 1')">Menu1</a>
+            <a onclick="loadContent('Menu 2')">Menu2</a>
+            <a onclick="loadContent('Menu 3')">Menu3</a>
+            <a onclick="loadContent('Menu 4')">Menu4</a>
+            <a onclick="loadContent('Menu 5')">Menu5</a>
+            <a onclick="loadContent('Menu 6')">Menu6</a>
+        </div>
+        <div class="content" id="frame_3">
+            <span class="frame-title">Frame_3</span>
+            <p>Contenu affiché ici...</p>
+        </div>
+        <div class="footer">
+            Footer : <span class="frame-title">frame_5</span>
+        </div>
     </div>
-    
-    <!-- Menu -->
-    <nav class="menu" id="menu" aria-label="Menu principal">
-        <h2>MENU</h2>
-        <a href="bienvenue.html">BIENVENUE</a>
-        <a href="formulaire1.html">FORMULAIRE 1</a>
-        <a href="formulaire2.html">FORMULAIRE 2</a>
-        <a href="mes_tableaux.html">Tableaux</a>
-        <a href="mon_cv.html">Mon CV</a>
-    </nav>
-
-    <main class="container" id="container">
-        <h1 class="welcome">BONJOUR ET BIENVENUE SUR MON SITE !</h1>
-        
-        <article class="description">
-            <h2><em>Je me présente</em></h2>
-            <p>
-                Je me nomme BIOKOU Candice,<br>
-                je suis née le 07/11/2006 et je suis étudiante en IG1/B.
-            </p>
-
-            <h2><em>Ce que je suis en train de faire</em></h2>
-            <p>
-                Ceci est mon premier test, je suis vraiment heureuse d'écrire ma première page web.
-                Je deviendrai certainement une grande Webmaster dans quelque temps !
-            </p>
-        </article>
-    </main>
 
     <script>
-        // Script pour gérer l'ouverture/fermeture du menu
-        const hamburger = document.getElementById('hamburger');
-        const menu = document.getElementById('menu');
-        const container = document.getElementById('container');
-        
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
-            menu.classList.toggle('active');
-            container.classList.toggle('menu-open');
-        });
-        
-        // Fermer le menu quand on clique à l'extérieur
-        document.addEventListener('click', function(event) {
-            if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-                hamburger.classList.remove('active');
-                menu.classList.remove('active');
-                container.classList.remove('menu-open');
-            }
-        });
+        function loadContent(menuItem) {
+            document.getElementById('frame_3').innerHTML = '<span class="frame-title">Frame_3</span><p>Vous avez sélectionné ' + menuItem + '</p>';
+        }
     </script>
 </body>
 </html>
